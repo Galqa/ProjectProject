@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="../css/shop.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/registration">Registration</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Shop</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="magazine : ${magazines}">
+            <td th:text="${magazine.magazineId}"></td>
+            <td th:text="${magazine.magazineName}"></td>
+            <td th:text="${magazine.price}"></td>
+            <td th:text="${magazine.category}"></td>
+            <td>
+            <img th:src="${magazine.imageUrl}" alt="Magazine Image"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
